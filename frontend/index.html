@@ -7,10 +7,107 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <main>
-        <h1>Mini Compiler Frontend</h1>
-        <p>Frontend setup placeholder.</p>
-    </main>
+    <div class="page-shell">
+        <header class="topbar">
+            <div class="brand">
+                <span class="brand-mark">&lt;/&gt;</span>
+                <span>Mini Compiler Frontend</span>
+            </div>
+            <div class="topbar-right">Compiler Design and Construction</div>
+        </header>
+
+        <main class="layout">
+            <section class="panel input-panel">
+                <div class="panel-header">
+                    <h2>Source Code</h2>
+                    <div class="button-group">
+                        <button id="loadSampleBtn" class="secondary-btn" type="button">Load Sample</button>
+                        <button id="clearBtn" class="secondary-btn" type="button">Clear</button>
+                    </div>
+                </div>
+
+                <textarea id="sourceCode" spellcheck="false" aria-label="Compiler source code input">int age = 20;
+int salary = 50000;
+if (age >= 18) {
+    salary = salary + 5000;
+}</textarea>
+
+                <button id="analyzeBtn" class="primary-btn" type="button">Analyze Code</button>
+            </section>
+
+            <aside class="panel output-panel">
+                <div class="info-box" id="overallStatus">Ready to analyze</div>
+
+                <div class="tabs">
+                    <button class="tab active" type="button">Tokens</button>
+                    <button class="tab" type="button">AST</button>
+                    <button class="tab" type="button">Symbol Table</button>
+                    <button class="tab" type="button">Errors</button>
+                </div>
+
+                <div class="result-box">
+                    <div class="result-section">
+                        <div class="section-header">Tokens</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tokenList">
+                                <tr>
+                                    <td colspan="2" class="empty">No tokens to display</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="result-section compact">
+                        <div class="section-header">Syntax / Semantic</div>
+                        <div class="status-row">
+                            <span>Lexical Check</span>
+                            <span class="status ok" id="lexStatus">Not Analyzed</span>
+                        </div>
+                        <div class="status-row">
+                            <span>Syntax Check</span>
+                            <span class="status ok" id="syntaxStatus">Not Analyzed</span>
+                        </div>
+                        <div class="status-row">
+                            <span>Semantic Check</span>
+                            <span class="status ok" id="semanticStatus">Not Analyzed</span>
+                        </div>
+                    </div>
+
+                    <div class="result-section">
+                        <div class="section-header">Symbol Table</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody id="symbolTable">
+                                <tr>
+                                    <td colspan="3" class="empty">No symbols to display</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="result-section">
+                        <div class="section-header">Errors</div>
+                        <ul id="errorList" class="error-list">
+                            <li class="empty">No errors to display</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+
     <script src="js/main.js"></script>
 </body>
 </html>
