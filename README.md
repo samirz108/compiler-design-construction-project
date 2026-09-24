@@ -73,4 +73,5 @@ The `build/` directory is local generated output and is ignored by Git.
 ```powershell
 ctest --test-dir build --output-on-failure
 ```
---completed 
+--completed
+--
