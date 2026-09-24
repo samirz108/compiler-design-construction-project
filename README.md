@@ -1,6 +1,10 @@
 # Mini Compiler Frontend
 
-An educational compiler frontend project using C++ for the compiler logic and HTML, CSS, and JavaScript for the future web interface.
+Compiler frontend project using C++ for the compiler logic and HTML, CSS, and JavaScript for the future web interface.
+
+## Preview
+
+<img width="1497" height="911" alt="compiler1" src="https://github.com/user-attachments/assets/1c12299f-3163-4af2-91c6-7a8aa41dc41a" />
 
 ## Project Structure
 
@@ -35,9 +39,19 @@ frontend/
   js/            JavaScript files
 ```
 
-## Current Phase
 
 The compiler backend now includes the token system, lexer, AST, parser, symbol table, semantic analyzer, and simple three-address-style intermediate representation. The HTTP server and frontend integration remain separate future phases.
+
+```text
+Token
+Lexer
+AST
+Parser
+Symbol Table
+Semantic Analyzer
+IR Generator
+Tests
+```
 
 ## C++ Environment
 
